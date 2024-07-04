@@ -1,0 +1,11 @@
+<div class='container pt-5'>
+    <h1 class='text-center'> All of the list </h1>
+    <ul class='align-items-center'>
+        <% @lists.each do |list| %>
+        <li>
+            <h2> <%= link_to list.name, list_path(list) %> | <%= link_to "Delete", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %> </h2>
+        </li>
+        <% end %>
+    </ul>
+    <%= link_to "Create a new list", new_list_path, class:'btn btn-primary' %>
+</div>

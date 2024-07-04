@@ -1,0 +1,14 @@
+<div class='container pt-5'>
+    <h1 class='text-center'> List of films </h1>
+    <ul class='d-flex align-items-center'>
+        <% @movies.each do |film| %>
+        <li class='card m-3 p-3 text-center'>
+            <h2> <%= film.title %> </h2>
+            <p> <%= film.overview%> <p>
+            <%= image_tag film.poster_url, width: 200 %>
+            <p class='text-start'> <%= film.rating%> </p>
+        </li>
+        <% end %>
+    </ul>
+    <%= link_to "Create a new list" %>
+</div>
