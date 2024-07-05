@@ -1,5 +1,7 @@
-<div class='container pt-5'>
+<div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.photo.key, height: 800, crop: :fill %>')">
     <h1 class='text-center'> List of films in <%= @list.name %> </h1>
+</div>
+<div class='container pt-5'>
     <ul class='d-flex align-items-center'>
         <% @list.movies.each do |film| %>
         <% bookmark = Bookmark.find_by(list: @list, movie: film) %>

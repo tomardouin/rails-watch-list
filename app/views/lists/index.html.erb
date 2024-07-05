@@ -9,9 +9,10 @@
     <h1 class='text-center'> All of the list </h1>
     <div class='cards'>
         <% @lists.each do |list| %>
-        <div class="card-category">
-            <%= link_to list.name, list_path(list) %> | <%= link_to "Delete", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-        </div>
+            <div class="card-category">
+                <%= image_tag Cloudinary::Utils.cloudinary_url(cl_image_path list.photo.key, width: 400, height: 300, crop: :fill) %>
+                <%= link_to list.name, list_path(list) %> | <%= link_to "Delete", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            </div>
         <% end %>
     </div>
     <%= link_to "Create a new list", new_list_path, class:'btn btn-primary mt-5' %>

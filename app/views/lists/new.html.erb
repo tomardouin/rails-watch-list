@@ -1,6 +1,7 @@
 <div class='container p-5'>
     <%= simple_form_for(@list) do |f| %>
         <%= f.input :name %>
+        <%= f.input :photo, as: :file %>
         <%= f.submit 'Create List', class: 'btn btn-primary rounded shadow me-3' %> | <%= link_to "Return to list", lists_path, class: "btn btn-primary rounded shadow ms-3" %>
     <% end %>
 </div>
