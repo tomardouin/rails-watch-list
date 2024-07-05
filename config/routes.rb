@@ -3,8 +3,6 @@ Rails.application.routes.draw do
 
   get "movies", to: "movies#index"
 
-  root "home", to: "pages#home"
-
   resources :lists, only: [:index, :new, :create, :show, :destroy] do
     resources :bookmarks, only: [:new, :create]
   end
